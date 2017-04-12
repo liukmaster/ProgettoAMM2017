@@ -1,0 +1,746 @@
+/*
+    Il CSS3 box-sizing proprietà consente di includere il padding e il bordo in 
+    larghezza totale di un elemento e l'altezza.
+*/
+
+body{
+    
+    background-image: url(\immagini/sfondologin.jpg);
+    background-position: center;
+    background-repeat: no-repeat;  
+    font: 13px/20px "Arial", Arial, sans-serif;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+
+p{
+  font-style: normal;
+  font-size: 15px;
+}
+
+h1{
+    font-style: normal;
+    font-size: 30px;
+    color: indianred;
+    
+}
+
+h2{
+    font-style: normal;
+    font-size: 20px;
+   color: indianred;
+    
+}
+
+h3{
+    font-style: normal;
+    font-size: 15px;
+    color: indianred;
+}
+
+a:link{
+    text-decoration: none; /* link non ancora visitato */
+}
+
+a:visited{
+    text-decoration: none/* link visitato */
+}
+
+ li a:hover{
+    text-decoration: underline; /* quando avvicino il mouse, sottolinea */
+    
+}
+
+a:active{
+    text-decoration: underline; /* quando si clicca */
+    
+}
+
+input.bottoneLogin{
+    border-radius: 1px;
+    font-size: 15px;
+    width: 100px;
+    
+   /*box-sizing: border-box;*/
+    
+}
+
+input.bottoneReset{
+    border-radius: 1px;
+    font-size: 15px;
+    width: 100px;
+    margin-left: 10px;
+    
+  /*box-sizing: border-box;*/
+}
+
+input{
+    border-radius: 10px;
+    width: 160px;
+    
+   /*box-sizing: border-box;*/
+}
+
+textarea{
+    border-radius: 10px;
+    
+}
+
+
+nav.BachecaNav,nav.profiloNav{
+    float: right;
+    width: 79.1%;
+    background-image: url(\immagini/footer2.jpg);
+    border-radius: 10px;
+    text-align: left;  
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    
+   /*box-sizing: border-box;*/
+    
+}
+
+/*
+    modifico le scritte all'interno del nav, le distanze e metto le barre |'
+*/
+nav li{
+    font-size: 20px;
+    display: inline-block;
+    list-style-type: none;
+    
+    border-right: 2px solid black;
+    padding-left: 20px;
+    padding-right: 20px;
+    
+    /*box-sizing: border-box;*/
+}
+
+nav li:last-child{
+    border-right: 0px solid black;
+    
+}
+
+nav li.attivo a{
+   background-color: grey;
+    border-radius: 10px;
+    padding: 10px;
+    
+   /*box-sizing: border-box;*/
+}
+
+a.linkJava{
+    text-align: justify;
+}
+
+
+
+h1.NerdBook{
+    text-align: center;
+    font-size: 50px;
+    margin-top: 20px;
+    background-image: url(\immagini/a.jpg);
+    background-position: center;
+    border-radius: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    
+  /*box-sizing: border-box;*/
+}
+
+div.postNormale{
+    border-radius: 10px;
+    background-color: grey;
+    margin-top: 10px;
+    margin-left: 100px;
+    margin-right: 0px;
+    padding-left: 5px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    text-align: left;
+    background-position: center;
+    
+    /*box-sizing: border-box;*/
+    
+}
+
+div.postImmagine{
+    border-radius: 10px;
+    background-color: grey;
+    margin-top: 20px;
+    margin-left: 100px;
+    padding-left: 5px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    text-align: left;
+    /*background-image: url(\immagini/a.jpg);*/
+    
+    /*box-sizing: border-box;*/
+}
+
+div.postURL{
+    border-radius: 10px;
+    background-color: grey;
+    margin-top: 20px;
+    margin-left: 100px;
+    margin-right: 0px;
+    margin-bottom: 10px;
+    padding-left: 5px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    text-align: left;
+    /*background-image: url(\immagini/a.jpg);*/
+    
+   /*box-sizing: border-box;*/
+    
+}
+
+p.autorePost{
+    font-weight: bold;
+    margin-left: 65px;
+}
+
+div.strutturaProfilo{  
+    float: right;
+    width: 79.1%;
+    height: 100%;
+    /*margin: 0 auto;*/
+    margin-bottom: 10px;
+    border-radius: 10px;
+    /*background-color: lightblue;*/
+    text-align: center;
+    padding-right: 10px;
+    padding-top: 49px;
+    padding-bottom: 50px;
+    background-image: url(\immagini/a.jpg);
+    background-position: center;
+    
+    /*box-sizing: border-box;*/
+    
+    
+}
+
+div.strutturaProfilo span.omino1{
+    float: left;
+    background-image: url(\immagini/omino1.png);
+    
+    margin-left: 100px;
+    margin-top: 0px;
+    margin-right: -230px;
+    width: 75px;
+    height: 74px;
+    background-repeat: no-repeat;
+    padding-top: 10px;
+    
+    padding-right: 0px;
+    padding-left: 50px;
+    
+    
+    
+}
+
+
+
+div.strutturaBacheca{  
+    float: right;
+    width: 79.1%;
+    height: 100%;
+    margin: 0 auto;
+    border-radius: 10px;
+    /*background-color: lightblue;*/
+    text-align: center;
+    padding-right: 10px;
+    padding-left: 115px;
+    background-image: url(\immagini/a.jpg);
+    background-repeat: no-repeat;
+    
+   /*box-sizing: border-box;*/
+    
+    
+}
+
+p.a,p.a,p.a{
+    text-align: center;
+    font-weight: bold;
+}
+
+
+
+label.pro{ 
+    display: inline-block;
+    margin-bottom: 2px;
+    text-align: left;
+    width: 75px;
+    padding-right: 22px;
+    
+   /*box-sizing: border-box;*/
+   
+    
+}
+
+div.left{ 
+    float: left;
+    width: 20%;
+    height: 80%;
+    border-radius: 10px;
+    
+    /*background-color: lightblue;*/
+    text-align: left;  
+    padding-bottom: 115px;
+    padding-left: 5px;
+    background-image: url(\immagini/a.jpg);
+    
+  /*box-sizing: border-box;*/
+}
+
+p.spaPersone,p.spaGruppi{
+    font-weight: bold;
+    padding-left: 10px;
+}
+
+
+header{
+    float: left;
+    width: 20%;
+    height: 70px; 
+    font-size: 20px; 
+    background-image: url(\immagini/a.jpg);
+    /*background-color: darkorange;*/
+    border-radius: 10px;
+    margin-bottom: 9px;
+    text-align: center;
+   
+    /*box-sizing: border-box;*/
+    
+}
+
+footer div.contatti{
+    
+    display: inline-block;
+    width: 33.1%;
+    height: 100px;
+    border-radius: 10px; 
+    padding-top: 1px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+    text-align: center;
+    margin-top: 5px;
+    background-image: url(\immagini/footer2.jpg);   
+}
+
+footer div.chisono{
+    display: inline-block;
+    width: 33.1%;
+    height: 100px;
+    border-radius: 10px; 
+    padding-top: 1px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+    text-align: center;
+    margin-top: 5px;
+    background-image: url(\immagini/footer2.jpg);   
+    
+}
+
+footer div.argomenti{
+    display: inline-block;
+    width: 33.1%;
+    height: 100px;
+    border-radius: 10px; 
+    padding-top: 1px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+    text-align: center;
+    margin-top: 5px;
+    background-image: url(\immagini/footer2.jpg);   
+    
+}
+
+div.strutturaLogin{
+    border-radius: 20px;
+    background-image: url(\immagini/a.jpg);
+    background-position: center;
+    margin-top: 70px;
+    margin-left: 36%;
+    margin-right: 36%;
+    margin-bottom: 130px;
+    padding-top: 1px;
+    padding-bottom: 20px;
+    padding-left: 80px;
+}
+
+label.lo{
+    font-weight: bold;
+   
+}
+
+input.username{
+    border-radius: 0;
+    
+}
+
+input.password{
+    border-radius: 0;  
+}
+
+p.memberLogin{
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    padding-right: 75px;
+}
+
+nav div.utenteLoggato{
+    border-radius: 5px;
+    background-color: grey;
+    font-weight: bold;
+    width: 100px;
+    margin-left: 88%;
+    margin-top: -40px;
+    text-align: center;
+    
+   
+}
+
+nav div.logout{
+   
+    width: 50px;
+    margin-left: 90%;
+    margin-top: -15px;
+    text-align: center;
+    margin-bottom: -15px;
+    
+   
+}
+
+input.search{
+    text-align: justify;
+    margin-top: 10px;
+    font-size: 13px;
+    border: 2px solid #e4e4e4;
+    border-radius: 4px;
+    background-color: white;
+    background-position: 1px 1px; 
+    background-repeat: no-repeat;
+    background-image: url('\immagini/search.png');
+    padding: 5px 5px 5px 28px;
+    
+    /*box-sizing: border-box;*/
+    
+    
+}
+/*  inserisco le proprieta per la transizione, inserisco la lunghezza inziale
+    proprieta' per la transizione, ossia che avvenga per la larghezza, altezza e la durata.
+    quando il campo search diventa attivo cambio la larghezza 
+*/
+input.search{
+    width: 30%;
+    transition-property: height, width; 
+    transition-duration: 1s;
+    
+}
+input.search:focus {
+    width: 80%;  
+}
+
+
+                /**    Media Query    **/
+                
+@media only screen and (max-width: 480px){
+    
+    body{
+    font: 13px/20px "Arial", Arial, sans-serif;
+    }
+    
+/**     faccio la parte di login       **/
+
+    input.bottoneLogin{
+        border-radius: 1px;
+        font-size: 15px;
+        width: 60px; 
+        
+    }
+    input.bottoneReset{
+        border-radius: 1px;
+        font-size: 15px;
+        width: 60px;
+        margin-left: 10px;
+    }
+    input{
+        border-radius: 10px;
+        width: 160px;
+    }
+    div.strutturaLogin{
+        border-radius: 20px;
+        background-image: url(\immagini/a.jpg);
+        background-position: center;
+        margin-top: 20px;
+        margin-left: 10%;
+        margin-right: 20%;
+        margin-bottom: 20px;
+        padding-top: 1px;
+        padding-bottom: 20px;
+        padding-left: 30px;
+        
+        width: 70%;
+        height: 60%;
+    }
+    
+    p.memberLogin{
+        text-align: center;
+        font-weight: bold;
+        font-size: 20px;
+        padding-right: 20px;
+    }
+    
+    footer div.contatti{
+        display: inline-block;
+        width: 100%;
+        height: 100px;
+        border-radius: 10px; 
+        padding-top: 1px;
+        padding-bottom: 10px;
+        padding-left: 5px;
+        text-align: center;
+        margin-top: 5px;
+        background-image: url(\immagini/footer2.jpg);   
+    }
+
+    footer div.chisono{
+        display: inline-block;
+        width: 100%;
+        height: 100px;
+        border-radius: 10px; 
+        padding-top: 1px;
+        padding-bottom: 10px;
+        padding-left: 5px;
+        text-align: center;
+        margin-top: 5px;
+        background-image: url(\immagini/footer2.jpg);   
+    }
+
+    footer div.argomenti{
+        display: inline-block;
+        width: 100%;
+        height: 100px;
+        border-radius: 10px; 
+        padding-top: 1px;
+        padding-bottom: 10px;
+        padding-left: 5px;
+        text-align: center;
+        margin-top: 5px;
+        background-image: url(\immagini/footer2.jpg);   
+    }
+    
+    header{
+    float: left;
+    width: 20%;
+    height: 70px; 
+    font-size: 20px; 
+    background-image: url(\immagini/a.jpg);
+    /*background-color: darkorange;*/
+    border-radius: 10px;
+    margin-bottom: 9px;
+    text-align: center;
+    }
+    
+    nav.BachecaNav,nav.profiloNav{
+        float: right;
+        width: 100%;
+        background-image: url(\immagini/footer2.jpg);
+        border-radius: 10px;
+        text-align: left;  
+        padding-top: 10px;
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+    }
+    
+    
+
+/*
+    modifico le scritte all'interno del nav, le distanze e metto le barre |'
+*/
+
+    nav li{
+    font-size: 20px;
+    display: inline-block;  
+    border-right: 0px solid black;
+    padding-left: 0%;
+    padding-right: 10%;
+    padding-bottom: 20px;
+    
+    /*box-sizing: border-box;*/
+}
+    nav div.utenteLoggato{
+    border-radius: 5px;
+    background-color: grey;
+    font-weight: bold;
+    width: 50px;
+    margin-left: 300px;
+    margin-top: -50px;
+    text-align: center;
+    
+   
+}
+
+nav div.logout{
+   
+    width: 50px;
+    margin-left: 200px;
+    margin-top: -15px;
+    text-align: center;
+    margin-bottom: -15px;
+    
+   
+}
+
+nav li:last-child{
+    border-right: 0px solid black;
+    
+}
+
+nav li.attivo a{
+   background-color: grey;
+    border-radius: 10px;
+    padding: 2px;
+    
+   /*box-sizing: border-box;*/
+}
+    
+div.left{ 
+    float: left;
+    width: 100%;
+    height: 40%;
+    border-radius: 10px;
+    
+    /*background-color: lightblue;*/
+    text-align: left;  
+    padding-bottom: 115px;
+    padding-left: 5px;
+    background-image: url(\immagini/a.jpg);
+    
+  /*box-sizing: border-box;*/
+}
+    
+    
+    
+    
+    
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (min-width: 480px) and (max-width: 1024px){
+    
+    body{
+    font: 13px/20px "Arial", Arial, sans-serif;
+    }
+    
+/**     faccio la parte di login       **/
+
+    input.bottoneLogin{
+        border-radius: 1px;
+        font-size: 15px;
+        width: 60px; 
+        
+    }
+    input.bottoneReset{
+        border-radius: 1px;
+        font-size: 15px;
+        width: 60px;
+        margin-left: 10px;
+    }
+    input{
+        border-radius: 10px;
+        width: 160px;
+    }
+    div.strutturaLogin{
+        border-radius: 20px;
+        background-image: url(\immagini/a.jpg);
+        background-position: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        margin-left: 100px;
+        margin-right: 200px;
+        
+        padding-top: 1px;
+        padding-bottom: 20px;
+        padding-left: 50px;
+        padding-right: 50px;
+        
+        width: 50%;
+        height: 50%;
+    }
+    
+    p.memberLogin{
+        text-align: center;
+        font-weight: bold;
+        font-size: 20px;
+        padding-right: 45%;
+    }
+    
+    footer div.contatti{
+        display: inline-block;
+        width: 100%;
+        height: 100px;
+        border-radius: 10px; 
+        padding-top: 1px;
+        padding-bottom: 10px;
+        padding-left: 5px;
+        text-align: center;
+        margin-top: 5px;
+        background-image: url(\immagini/footer2.jpg);   
+    }
+
+    footer div.chisono{
+        display: inline-block;
+        width: 100%;
+        height: 100px;
+        border-radius: 10px; 
+        padding-top: 1px;
+        padding-bottom: 10px;
+        padding-left: 5px;
+        text-align: center;
+        margin-top: 5px;
+        background-image: url(\immagini/footer2.jpg);   
+    }
+
+    footer div.argomenti{
+        display: inline-block;
+        width: 100%;
+        height: 100px;
+        border-radius: 10px; 
+        padding-top: 1px;
+        padding-bottom: 10px;
+        padding-left: 5px;
+        text-align: center;
+        margin-top: 5px;
+        background-image: url(\immagini/footer2.jpg);   
+    }
+    
+    
+}
+     
