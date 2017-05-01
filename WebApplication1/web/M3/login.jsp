@@ -1,36 +1,49 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
 
-Inserire all’interno della pagina di login.html un form per richiedere username 
-e password all’utente, utilizzando i campi di input corretti. 
-Create una sezione di navigazione che permetta di raggiungere la pagina 
-descrizione.html, profilo.html e bacheca.html.
-Inserite le metainformazioni sulla pagina e validatela. 
--->
 <html>
     <head>
         <title>Login</title>
+        
         <meta charset="UTF-8">
+        
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Form di login">
         <meta name="author" content="Luca Fadda">
+        
         <LINK REL="stylesheet" TYPE="text/css" media="all" HREF="style.css">
+    
     </head>
+    
+    
     <body>
-        <h1 class="NerdBook">NerdBook</h1>
+        <!-- setto il valore login che verrà salvato sulla variabile title ripresa nell'header.jsp-->
+        <c:set var="title" value="Login" scope="request"/>
+        <jsp:include page="header.jsp"/>
+        
+        
+        
         <div class="strutturaLogin">
-        <form>
+            
+            <c:if test="${errori == true}">
+                <div id="invaidDataWarning">I dati inseriti non sono corretti</div>
+            </c:if>
+            
+            <form action="Login.java" method="post">
             <div id="Login">
                 <p class="memberLogin">Member Login</p>
-                <label for="username" class="lo">Username<br/></label>
-                <input type="text" name="username" class="username" placeholder="username" required/>
-                <br/><br/>
-                <label for="password" class="lo">Password<br/></label>
-                <input type="password" name="password" class="password" placeholder="password" required/>
-                <br/>
+                
+                <div>
+                    <label for="userName" class="lo">Username<br/></label>
+                    <input type="text" name="username" class="username" id="userName" placeholder="username" required/>
+                    <br/><br/>
+                </div>
+                <div> 
+                    <label for="password" class="lo">Password<br/></label>
+                    <input type="password" name="password" class="password" id="userPass" placeholder="password" required/>
+                    <br/>
+                </div>
                 
                 <br/><input class="bottoneLogin" type="submit" value="Log In" />
                 <input type="reset" class="bottoneReset" value="reset"/>

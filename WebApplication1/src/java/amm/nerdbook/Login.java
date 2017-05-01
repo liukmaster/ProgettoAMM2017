@@ -6,17 +6,27 @@
 package amm.nerdbook;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import amm.nerdbook.Classi.UtenteRegistrato;
+import amm.nerdbook.Classi.UtenteRegistratoFactory;
+
+
 
 /**
  *
  * @author fiest_000
  */
 public class Login extends HttpServlet {
+    
+   
+    public String loggato;
+    public String id_loggato;
+    
+    
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -29,20 +39,110 @@ public class Login extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+        //setto il contenuto, ossia sarà di tipo html
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet Login</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet Login at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+        
+       
+        
+        
         }
+    
+    
+    //creo una sessione solo dopo essere sicuro che l'username e la password siano valide    
+    private boolean eseguoLogin(HttpServletRequest request){
+        /*
+          per eseguire il login, devo per prima cosa leggere i dati che sono stati inviati
+           name = username, name = password dalla pagina jsp tramite la post
+        */
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
+        
+        //faccio un controllo sui dati
+        if(username == null && password == null){
+            return false;
+        }
+        
+        //dati != da null
+        if(username != null && password != null){
+            /*
+              controllo che l'id dell'utente sia != da -1, se diverso allora è valido
+              se uguale a -1 allora i dati username e password sono sbagliati
+            */
+            int id = loginUtente(username,password);
+            if(id>-1){
+                
+                //creo una sessione 
+                HttpSession session = request.getSession();
+                //setto loggato a true
+                session.setAttribute(loggato,true);
+                //setto id_loggatoa id controllato (>-1 e valido)
+                session.setAttribute(id_loggato,id);
+                return true;
+            }
+            /*
+              mentre se i dai inseriti non sono corretti, quindi id= -1
+              ritorno al form del login informandolo che i dati inseriti sono erratti
+            */
+            else{
+                return false;
+            }  
+        }
+        else{
+            return false;
+        }  
     }
+    
+    //ciò che avviene dopo aver fatto il login?
+    private void postLogin(HttpServletRequest request, HttpServletResponse response) 
+            throws ServletException, IOException{
+        
+        
+        //se ho eseguito il login correttamente allora reindirizzo alla bacheca.jsp
+        if(eseguoLogin(request) == true){
+            request.getRequestDispatcher("bacheca.jsp").forward(request, response);
+        }
+        /*
+          altrimenti setto errori a true e restituisco di nuovo la pagina di login
+          quando setto errori a true, sulla jsp controlla se errori è settato a true
+          e se lo è restituisce degli errori.
+          Possibile implemento di un arrayList per stampare magari che tipo di errori con i rispettivi controlli
+        */
+        else{
+            request.setAttribute("errori", true);
+            request.getRequestDispatcher("login.jsp").forward(request, response);
+        }   
+    }
+    
+    
+    
+        
+    
+    
+    
+     
+    private int loginUtente(String username, String password){
+        
+        //creo una istanza di urf in modo tale da capire se l'username (email) e la
+        //password siano giuste
+        UtenteRegistratoFactory u_r_f = UtenteRegistratoFactory.getInstanza();
+        
+        
+        //scorro gli utenti registrati e faccio il controllo 
+        for(UtenteRegistrato ur : u_r_f.getUtentiRegistrati())
+            if(username.equals(ur.getEmail()) && password.equals(ur.getPassword())){
+                return ur.getId();
+            }
+        return -1; //dati non esistono o scritti sbagliati
+            
+    }    
+        
+        
+        
+        
+        
+        
+    
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

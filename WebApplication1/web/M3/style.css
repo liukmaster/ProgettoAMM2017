@@ -5,10 +5,26 @@
 
 body{
     
-    background-image: url(\immagini/sfondologin.jpg);
+    background-color: tomato;
     background-position: center;
     background-repeat: no-repeat;  
     font: 13px/20px "Arial", Arial, sans-serif;
+}
+
+div.d_i_p{
+    background-color: lightblue;
+    border-radius: 10px;
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-bottom: 5px;
+    
+}
+
+
+nav div.Sommario{
+    background-color: lightblue;
+    border-radius: 10px;
+    text-align: center;
 }
 
 
@@ -94,7 +110,7 @@ textarea{
 nav.BachecaNav,nav.profiloNav{
     float: right;
     width: 79.1%;
-    background-image: url(\immagini/footer2.jpg);
+   background-color: darkorange;
     border-radius: 10px;
     text-align: left;  
     padding-top: 10px;
@@ -126,7 +142,7 @@ nav li:last-child{
 }
 
 nav li.attivo a{
-   background-color: grey;
+   background-color: darkturquoise;
     border-radius: 10px;
     padding: 10px;
     
@@ -139,22 +155,23 @@ a.linkJava{
 
 
 
-h1.NerdBook{
+h1.NerdBook, header.NerdBook{
     text-align: center;
     font-size: 50px;
     margin-top: 20px;
-    background-image: url(\immagini/a.jpg);
+    background-color: darkorange;
     background-position: center;
     border-radius: 10px;
     padding-top: 20px;
     padding-bottom: 20px;
+    
     
   /*box-sizing: border-box;*/
 }
 
 div.postNormale{
     border-radius: 10px;
-    background-color: grey;
+    background-color: chocolate;
     margin-top: 10px;
     margin-left: 100px;
     margin-right: 0px;
@@ -170,7 +187,7 @@ div.postNormale{
 
 div.postImmagine{
     border-radius: 10px;
-    background-color: grey;
+    background-color: crimson;
     margin-top: 20px;
     margin-left: 100px;
     padding-left: 5px;
@@ -184,7 +201,7 @@ div.postImmagine{
 
 div.postURL{
     border-radius: 10px;
-    background-color: grey;
+    background-color: antiquewhite;
     margin-top: 20px;
     margin-left: 100px;
     margin-right: 0px;
@@ -211,12 +228,11 @@ div.strutturaProfilo{
     /*margin: 0 auto;*/
     margin-bottom: 10px;
     border-radius: 10px;
-    /*background-color: lightblue;*/
+    background-color: lightblue;
     text-align: center;
     padding-right: 10px;
     padding-top: 49px;
     padding-bottom: 50px;
-    background-image: url(\immagini/a.jpg);
     background-position: center;
     
     /*box-sizing: border-box;*/
@@ -226,7 +242,7 @@ div.strutturaProfilo{
 
 div.strutturaProfilo span.omino1{
     float: left;
-    background-image: url(\immagini/omino1.png);
+    background-color: lightblue;
     
     margin-left: 100px;
     margin-top: 0px;
@@ -255,7 +271,7 @@ div.strutturaBacheca{
     text-align: center;
     padding-right: 10px;
     padding-left: 115px;
-    background-image: url(\immagini/a.jpg);
+    background-color: lightblue;
     background-repeat: no-repeat;
     
    /*box-sizing: border-box;*/
@@ -292,7 +308,7 @@ div.left{
     text-align: left;  
     padding-bottom: 115px;
     padding-left: 5px;
-    background-image: url(\immagini/a.jpg);
+   background-color: lightblue;
     
   /*box-sizing: border-box;*/
 }
@@ -308,7 +324,7 @@ header{
     width: 20%;
     height: 70px; 
     font-size: 20px; 
-    background-image: url(\immagini/a.jpg);
+    background-color: lightblue;
     /*background-color: darkorange;*/
     border-radius: 10px;
     margin-bottom: 9px;
@@ -329,7 +345,7 @@ footer div.contatti{
     padding-left: 5px;
     text-align: center;
     margin-top: 5px;
-    background-image: url(\immagini/footer2.jpg);   
+   background-color: lightblue;  
 }
 
 footer div.chisono{
@@ -342,7 +358,7 @@ footer div.chisono{
     padding-left: 5px;
     text-align: center;
     margin-top: 5px;
-    background-image: url(\immagini/footer2.jpg);   
+    background-color: lightblue;
     
 }
 
@@ -356,13 +372,13 @@ footer div.argomenti{
     padding-left: 5px;
     text-align: center;
     margin-top: 5px;
-    background-image: url(\immagini/footer2.jpg);   
+    background-color: lightblue;
     
 }
 
 div.strutturaLogin{
     border-radius: 20px;
-    background-image: url(\immagini/a.jpg);
+    background-color: lightblue;
     background-position: center;
     margin-top: 70px;
     margin-left: 36%;
@@ -396,7 +412,7 @@ p.memberLogin{
 
 nav div.utenteLoggato{
     border-radius: 5px;
-    background-color: grey;
+    background-color: chocolate;
     font-weight: bold;
     width: 100px;
     margin-left: 88%;
