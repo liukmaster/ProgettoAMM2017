@@ -19,7 +19,7 @@
         <div class="strutturaLogin">
             
             <c:if test="${errori == true}">
-                <div id="errors">I dati inseriti non sono corretti</div>
+                <div id="errors">I dati inseriti non sono corretti!</div>
             </c:if>
             
             <form action="Login.java" method="post">
