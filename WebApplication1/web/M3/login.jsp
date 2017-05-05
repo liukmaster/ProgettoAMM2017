@@ -3,31 +3,23 @@
 <!DOCTYPE html>
 
 <html>
+    <c:set var="title" value="Login" scope="request"/>
     <head>
-        <title>Login</title>
-        
         <meta charset="UTF-8">
-        
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Form di login">
         <meta name="author" content="Luca Fadda">
-        
         <LINK REL="stylesheet" TYPE="text/css" media="all" HREF="style.css">
-    
     </head>
-    
-    
     <body>
         <!-- setto il valore login che verrà salvato sulla variabile title ripresa nell'header.jsp-->
-        <c:set var="title" value="Login" scope="request"/>
+        
         <jsp:include page="header.jsp"/>
-        
-        
         
         <div class="strutturaLogin">
             
             <c:if test="${errori == true}">
-                <div id="invaidDataWarning">I dati inseriti non sono corretti</div>
+                <div id="errors">I dati inseriti non sono corretti</div>
             </c:if>
             
             <form action="Login.java" method="post">
@@ -45,8 +37,8 @@
                     <br/>
                 </div>
                 
-                <br/><input class="bottoneLogin" type="submit" value="Log In" />
-                <input type="reset" class="bottoneReset" value="reset"/>
+                <br/><input class="bottoneLogin" name="bottoneLogin" type="submit" value="Log In" />
+                <input type="reset" class="bottoneReset"  value="reset"/>
                 
             </div>
                 

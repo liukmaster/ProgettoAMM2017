@@ -5,10 +5,6 @@
         <servlet-class>amm.nerdbook.Bacheca</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>java</servlet-name>
-        <servlet-class>Login.java</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>Login</servlet-name>
         <servlet-class>amm.nerdbook.Login</servlet-class>
     </servlet>
@@ -21,12 +17,8 @@
         <url-pattern>/Bacheca</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>java</servlet-name>
-        <url-pattern>/java</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
         <servlet-name>Login</servlet-name>
-        <url-pattern>/Login</url-pattern>
+        <url-pattern>/M3\login.jsp</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>Profilo</servlet-name>
@@ -37,4 +29,8 @@
             30
         </session-timeout>
     </session-config>
+    
+    <welcome-file-list>  
+   <welcome-file>Login</welcome-file>    
+  </welcome-file-list> 
 </web-app>

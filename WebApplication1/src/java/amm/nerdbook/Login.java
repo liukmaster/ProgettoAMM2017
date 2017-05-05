@@ -21,13 +21,9 @@ import amm.nerdbook.Classi.UtenteRegistratoFactory;
  * @author fiest_000
  */
 public class Login extends HttpServlet {
-    
-   
     public String loggato;
     public String id_loggato;
     
-    
-
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -43,14 +39,16 @@ public class Login extends HttpServlet {
         //setto il contenuto, ossia sarà di tipo html
         response.setContentType("text/html;charset=UTF-8");
         
-       
-        
-        
+        postLogin(request,response);
+          
         }
     
     
     //creo una sessione solo dopo essere sicuro che l'username e la password siano valide    
-    private boolean eseguoLogin(HttpServletRequest request){
+    private boolean eseguoLogin(HttpServletRequest request)
+            throws ServletException, IOException{
+        
+      
         /*
           per eseguire il login, devo per prima cosa leggere i dati che sono stati inviati
            name = username, name = password dalla pagina jsp tramite la post
@@ -76,7 +74,7 @@ public class Login extends HttpServlet {
                 HttpSession session = request.getSession();
                 //setto loggato a true
                 session.setAttribute(loggato,true);
-                //setto id_loggatoa id controllato (>-1 e valido)
+                //setto id_loggato a id controllato (>-1 e valido)
                 session.setAttribute(id_loggato,id);
                 return true;
             }
@@ -90,7 +88,9 @@ public class Login extends HttpServlet {
         }
         else{
             return false;
-        }  
+        } 
+        
+        
     }
     
     //ciò che avviene dopo aver fatto il login?
@@ -114,19 +114,12 @@ public class Login extends HttpServlet {
         }   
     }
     
-    
-    
-        
-    
-    
-    
-     
+    //controllo che l'username e la password siano corretti, se lo sono restituisco un intero id o -1
     private int loginUtente(String username, String password){
         
         //creo una istanza di urf in modo tale da capire se l'username (email) e la
         //password siano giuste
         UtenteRegistratoFactory u_r_f = UtenteRegistratoFactory.getInstanza();
-        
         
         //scorro gli utenti registrati e faccio il controllo 
         for(UtenteRegistrato ur : u_r_f.getUtentiRegistrati())
@@ -135,7 +128,11 @@ public class Login extends HttpServlet {
             }
         return -1; //dati non esistono o scritti sbagliati
             
-    }    
+    }
+    
+    
+
+
         
         
         

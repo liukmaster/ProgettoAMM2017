@@ -1,12 +1,10 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
+    <c:set var="title" value="il tuo profilo" scope="request" />
     <head>
-        <title>Profilo</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="author" content="Luca Fadda">
@@ -14,24 +12,16 @@ and open the template in the editor.
         <LINK REL="stylesheet" TYPE="text/css" HREF="style.css">
     </head>
     <body>
-        <header>
-            <h1>NerdBook</h1>
-        </header>
-        <nav class="profiloNav"> 
-                          
-                <ul>
-                    <li class="attivo"><a href="profilo.html">Profilo</a></li>
-                    <li><a href="bacheca.html">Bacheca</a></li>
-                                   
-                </ul>
-            <div class="utenteLoggato">
-                <p>Luca Fadda</p>
-            </div>
-            <div class="logout">
-                <p><a href="">Logout</a></p>
-            </div>
-                   
-            </nav>
+        
+        <jsp:include page="header.jsp"/>
+        <c:set var="page" value="profilo" scope="request"/>
+        
+        <nav class="profiloNav">               
+            <ul>
+                <li class="attivo"><a href="profilo.jsp">Profilo</a></li>
+                <li><a href="bacheca.jsp">Bacheca</a></li>
+            </ul>
+        </nav>
         
         <div class="left">
                 
