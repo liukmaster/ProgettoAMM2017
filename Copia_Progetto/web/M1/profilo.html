@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>NerdBook</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Luca Fadda">
+        <meta name="description" content="inserimento dati profilo">  
+    </head>
+    <body>
+        <h1>Profilo</h1>
+        
+            <label for="NomeUtente">Nome dell'utente<br/></label>
+            <input type="text" name="username" id="NomeUtente" required/>
+            <br/><br/>
+           
+            <label for="CognomeUtente">Cognome dell'utente<br/></label>
+            <input type="text" name="cognome" id="CognomeUtente" required/>
+            <br/><br/>
+           
+            <label for="URLimmagineProfilo">URL immagine per il profilo<br/></label>
+            <input type="url" name="URLimmagineProfilo" id="URLimmagineProfilo" required/>
+            <br/><br/>
+            
+            <label for="frasePresentazione">Frase di presentazione<br/></label>
+            <textarea name="frasePresentazione" id="frasePresentazione"></textarea>
+            <br/><br/>
+            
+            <label for="dataDiNascita">Data di nascita<br/></label>
+            <input type="date" name="dataDiNascita" id="dataDiNascita"/>
+            <br/><br/>
+            
+            <label for="password">Password<br/></label>
+            <input type="password" name="password" id="password" required/>
+            <br/><br/>
+            
+            <label for="confermaPassword">Conferma password<br/></label>
+            <input type="password" name="confermaPassword" id="confermaPassword" required/>
+               
+            <br/><br/><input type="submit" value="conferma" />
+            
+             <ul>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="descrizione.html">Descrizione</a></li>
+            </ul>
+    </body>
+</html>

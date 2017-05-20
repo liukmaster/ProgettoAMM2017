@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+
+Inserire all’interno della pagina di login.html un form per richiedere username 
+e password all’utente, utilizzando i campi di input corretti. 
+Create una sezione di navigazione che permetta di raggiungere la pagina 
+descrizione.html, profilo.html e bacheca.html.
+Inserite le metainformazioni sulla pagina e validatela. 
+-->
+<html>
+    <head>
+        <title>NerdBook</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Form di login">
+        <meta name="author" content="Luca Fadda">
+    </head>
+    <body>
+        <form>
+            <div id="Login">
+                <label for="username">Username<br/></label>
+                <input type="text" name="username" id="username" required/>
+                <br/><br/>
+                <label for="password">Password<br/></label>
+                <input type="password" name="password" id="password" required/>
+                <br/>
+                <br/><input type="submit" value="Login" />
+                <input type="reset" value="reset"/>
+            </div>
+        </form>
+        <ul>
+            <li><a href="profilo.html">Profilo</a></li>
+            <li><a href="bacheca.html">Bacheca</a></li>
+            <li><a href="descrizione.html">Descrizione</a></li>
+        </ul>
+    </body>
+</html>
