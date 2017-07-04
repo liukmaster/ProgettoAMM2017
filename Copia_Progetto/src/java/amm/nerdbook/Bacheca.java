@@ -21,6 +21,8 @@ import java.util.List;
 
 public class Bacheca extends HttpServlet {
 
+    Post post;
+
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -30,64 +32,77 @@ public class Bacheca extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+
         //setto il tipo di risposta, codice html
         response.setContentType("text/html;charset=UTF-8");
-                
+
         //controllo esistenza sessione
-        if(Controlli.esistenzaSessione(request)){
-            //restituisco l'utente loggato 
-            Utente utente = Controlli.getUtenteLoggato(request);
-            
-            
+        if (Controlli.esistenzaSessione(request)) {
+            //restituisco l'utente da visualizzare
+            Utente utente = Controlli.getUtente(request);
+
             List<Utente> amiciutente = UtenteFactory.getInstanza().getUtentiRegistrati();
-            if(utente != null){
-                request.setAttribute("utente",utente);
-                request.setAttribute("amiciutente",amiciutente);
-                
-                List<Gruppo> groups = GruppoFactory.getIstanza().ListaGruppi;
-                request.setAttribute("gruppiutente", groups);
-                
-                List<Post> posts = PostFactory.getIstanza().getPostUtenteList(utente);
-                request.setAttribute("posts", posts);
+            if (utente != null) {
+                request.setAttribute("utente", utente);
+                request.setAttribute("amiciutente", amiciutente);
+                request.setAttribute("UtenteLoggato", Controlli.getUtenteLoggato(request));
+
+                List<Gruppo> gruppi = GruppoFactory.getIstanza().allGroups();
+                request.setAttribute("gruppiutente", gruppi);
+
+                if (request.getParameter("pubblicapost") != null) {
+                    pubblicaPost(request);
+
+                }
+                cancellaPost(request);
+
+                List<Post> elencoPost = PostFactory.getIstanza().getPostUtenteList(utente);
+                request.setAttribute("posts", elencoPost);
                 request.getRequestDispatcher("bacheca.jsp").forward(request, response);
-            }
-            else {
+            } else {
                 response.setStatus(HttpServletResponse.SC_NOT_FOUND);
             }
-            
-        }
-        else {
+        } else {
             request.getRequestDispatcher("Login").forward(request, response);
         }
-        
-            
     }
-    
-    /*
-    //metodo che restituisce i post dell'utente se diverso da null
-    private void listaDeiPostUtente(HttpServletRequest request, HttpServletResponse response){
-        
-        Utente utente = Controlli.getUtenteLoggato(request);
-        if(utente != null){
-            request.setAttribute("utente", utente);
-        
+
+    public void pubblicaPost(HttpServletRequest request) {
+
+        Utente utente = Controlli.getUtente(request);
+
+        String postditesto = request.getParameter("postditesto");
+        String postimmagine = request.getParameter("postimmagine");
+
+        if (postditesto.length() != 0 || postimmagine.length() != 0) {
+            post = new Post();
+            post.setTestoPost(postditesto);
+            post.setImmaginePost(postimmagine);
+            if (postimmagine == null || postimmagine.length() == 0) {
+                post.setTipoDiPost(Post.Type.TEXT);
+            } else {
+                post.setTipoDiPost(Post.Type.URL);
+            }
+            post.setUtente(utente);
+            PostFactory.getIstanza().addPost(post);
+            request.setAttribute("postpubblicatoconsuccesso", true);
+        } else {
+            String postvuoto = "Post Vuoto";
+            request.setAttribute("postvuoto", postvuoto);
         }
-    */
-    
-    
-        
-        
-        
-        
-        
-     
-    
-    
-    
+    }
+
+    public void cancellaPost(HttpServletRequest request) {
+
+        String cancellapost = request.getParameter("cancellapost");
+
+        if (cancellapost != null) {
+            int delete = Integer.parseInt(cancellapost);
+            PostFactory.getIstanza().deletePost(delete);
+        }
+    }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -128,5 +143,3 @@ public class Bacheca extends HttpServlet {
         return "Short description";
     }// </editor-fold>
 }
-
-

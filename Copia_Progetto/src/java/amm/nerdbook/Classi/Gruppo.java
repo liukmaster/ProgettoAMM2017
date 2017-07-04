@@ -13,11 +13,12 @@ public class Gruppo {
     private String nomeGruppo;
     private List<Utente> membri;
     private List<Post> postGruppo;
-
+    private Utente fondatore;
+ 
     public Gruppo(){
         this.id = 0;
         this.nomeGruppo = "";
-        //membri = new ArrayList<>();
+        membri = new ArrayList<>();
     }
     public int getId() {
         return id;
@@ -39,12 +40,12 @@ public class Gruppo {
        membri.add(nuovoMembro);
     }
     
-    /**
-     *
-     * @return
-     */
-    public List<Utente> getMembro(){
+    public List<Utente> getMembri(){
         return membri;
+    }
+    
+    public void setMembri(List<Utente> nuovi){
+        membri = nuovi;
     }
     
     public void setPostGruppo(Post nuovoPost){
@@ -54,7 +55,15 @@ public class Gruppo {
     public List getPostGruppo(){
         return postGruppo;
     }
+    
+    public Utente getFondatore() {
+        return fondatore;
+    }
 
+    public void setFondatore(Utente fondatore) {
+        this.fondatore = fondatore;
+    }
+    
     @Override
     public boolean equals(Object obj){
         if(obj != null)

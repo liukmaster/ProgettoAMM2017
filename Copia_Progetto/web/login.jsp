@@ -6,42 +6,42 @@
     <c:set var="title" value="Login" scope="request"/>
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Form di login">
         <meta name="author" content="Luca Fadda">
-        <LINK REL="stylesheet" TYPE="text/css" media="all" HREF="style.css">
+        <LINK REL="stylesheet" TYPE="text/css" HREF="style1.css" media="screen">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        
-        <!-- setto il valore login che verrà salvato sulla variabile title ripresa nell'header.jsp-->
-        <h1 class="NerdBook">NerdBook - ${title}</h1>
-        
-        <div class="strutturaLogin">
-            <c:if test="${errori == true}">
-                <div id="errors">I dati inseriti non sono corretti!</div>
-            </c:if>
-            
-            <form action="Login" method="post">
-            <div id="Login">
-                <p class="memberLogin">Member Login</p>
-                <div>
-                    <label for="userName" class="lo">Username<br/></label>
-                    <input type="text" name="username" class="username" id="userName" placeholder="username" required/>
-                    <br/><br/>
-                </div>
-                <div> 
-                    <label for="password" class="lo">Password<br/></label>
-                    <input type="password" name="password" class="password" id="userPass" placeholder="password" required/>
-                    <br/>
-                </div>
-                
-                <br/><input class="bottoneLogin" name="bottoneLogin" type="submit" value="Log In" />
-                <input type="reset" class="bottoneReset"  value="reset"/>
-                
+        <div id="container">
+            <!-- setto il valore login che verrà salvato sulla variabile title ripresa nell'header.jsp-->
+            <jsp:include page="header.jsp"/>
+            <div id="content">
+                <div class="strutturaLogin">
+                    <form action="Login" method="post">
+                        
+                            <div id="memberLogin">
+                                Member Login
+                            </div>
+                            <div class="UsernamePasswordLogin">
+                                <div class="in">                                   
+                                    <input type="text" name="username" id="userName" placeholder="username" required/>
+                                </div>
+                                <div class="in">
+                                    <input type="password" name="password" id="userPass" placeholder="password" required/>
+                                </div>
+                            </div>
+                            <div id="bottoni">
+                                <input id="bottonelogin" name="bottoneLogin" type="submit" value="Log In"/>
+                                <input name="registrazione" type="reset" value="reset"/>
+                            </div>                        
+                    </form>
+                    <c:if test="${errori == true}">
+                        <div id="errors">I dati inseriti non sono corretti!</div>
+                    </c:if>
+                </div>     
             </div>
-                
-        </form>
+            <div id="push"></div>
+            <jsp:include page="footer.jsp"/>
         </div>
-        <jsp:include page="footer.jsp"/>      
     </body>
 </html>

@@ -38,6 +38,6 @@
         </session-timeout>
     </session-config>
     <welcome-file-list>
-        <welcome-file>Login</welcome-file>
+        <welcome-file>descrizione.jsp</welcome-file>
     </welcome-file-list>
 </web-app>

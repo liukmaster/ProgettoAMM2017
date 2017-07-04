@@ -45,33 +45,29 @@ public class Controlli extends HttpServlet {
             return false;
         }
     }   
-    public static Utente getUtenteLoggato(HttpServletRequest request){
-            
+    public static Utente getUtente(HttpServletRequest request){    
         //richiamo la sessione esistente
         HttpSession session = request.getSession(false);
         //chiamo il paramentro passato tramite la get
         String user = request.getParameter("user");
+        /*se il paramentro è diverso da null vuol dire che è l'id è di un altro account, quindi glielo passo con integer.parseint(user) */
 
-        Integer utenteId;
-        /*
-            se il paramentro è diverso da null vuol dire che è l'id è di un altro account, quindi 
-            lo assegno a userID
-        */
         if(user != null){
-            utenteId = Integer.parseInt(user);
+           return UtenteFactory.getInstanza().getUtentiRegistratiById(Integer.parseInt(user));
         }
         //se user == null vuol dire che sono loggato e quindi setto userID con l'id dell'utente loggato
-        else{
-            Integer idUtenteLoggato = (Integer)session.getAttribute("IdUtenteLoggato");
-            utenteId = idUtenteLoggato;
-        }
-        //ritorno l'utente con quel determinato id
-        return UtenteFactory.getInstanza().getUtentiRegistratiById(utenteId);
+        else
+            return getUtenteLoggato(request);        
     }
+    //metodo che restituisce l'utente loggato
+    public static Utente getUtenteLoggato(HttpServletRequest request){
+        HttpSession session = request.getSession(false);
+        Integer idlogged = (Integer)session.getAttribute("IdUtenteLoggato");
         
-        
+        Utente utenteLoggato = UtenteFactory.getInstanza().getUtentiRegistratiById(idlogged);
+        return utenteLoggato;
+    }
     
-
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.

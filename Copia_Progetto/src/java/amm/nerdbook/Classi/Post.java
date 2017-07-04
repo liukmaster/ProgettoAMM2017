@@ -8,18 +8,13 @@ package amm.nerdbook.Classi;
 public class Post {
     
     //creo una enumerazione in modo tale che i post siano O immagini o Testo
-    public enum Type {TEXT, IMAGE};
+    public enum Type {TEXT, URL};
     private int id;
-    private Utente utente;
-    private String contenutoPost;
+    private Utente autore;
+    private String testoPost;
     private Type tipoDiPost;
+    private String immaginePost;
     
-    public Post(){
-        this.id = 0;
-        this.contenutoPost = "";
-        this.tipoDiPost = Type.TEXT;
-    }
-
     public int getId() {
         return id;
     }
@@ -29,19 +24,27 @@ public class Post {
     }
 
     public Utente getUtente() {
-        return utente;
+        return autore;
     }
 
     public void setUtente(Utente utente) {
-        this.utente = utente;
+        this.autore = utente;
     }
 
     public String getContenutoPost() {
-        return contenutoPost;
+        return testoPost;
     }
 
-    public void setContenutoPost(String contenutoPost) {
-        this.contenutoPost = contenutoPost;
+    public void setTestoPost(String contenutoPost) {
+        this.testoPost = contenutoPost;
+    }
+    
+    public String getImmaginePost(){
+        return immaginePost;
+    }
+    
+    public void setImmaginePost(String contenutoPost) {
+        this.immaginePost = contenutoPost;
     }
 
     public Type getTipoDiPost() {

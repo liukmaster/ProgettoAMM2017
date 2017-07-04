@@ -1,0 +1,453 @@
+/*
+    Il CSS3 box-sizing proprietà consente di includere il padding e il bordo in 
+    larghezza totale di un elemento e l'altezza.
+*/
+
+html, body{
+    height: 100%;
+    font: 13px/20px "Arial", Arial, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+/*descrizione, iscrizione e pagamento: descrizione*/
+div.d_i_p{
+    width: 100%;
+    height: auto;
+}
+
+.sub_d_i_p{
+    width: 100%;
+    height: auto;
+    line-height: 25px;
+    padding: 20px 0 20px 5px;
+}
+/* div centrale che contiene il somamrio dei link, [#spazioVuoto] [#divsommariolink] [#descLogin] */
+#sommariolink{
+    float: left;
+    width: 60%;
+    height: 100px;
+    line-height: 40px;
+    text-align: center;
+}
+/*sommario link interni: pagina descrizione*/
+nav div.Sommario{
+    background-color: black;
+    text-align: center;
+    list-style-type: none;
+    height: 100px;
+    width: 100%;
+}
+/* scritte del sommario, iscrizione ecc, pagina descrizione */
+.desc{
+    list-style-type: none;
+    display: inline;
+    font-size: 20px;
+    border-right: 2px solid white;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.desc a, #descLogin a{
+    color: white;
+}
+/* scritta login in alto a destra della pagina descrizione */
+#descLogin{
+    width: 20%;
+    float: left;
+    height: 100px;
+    text-align: right;
+    padding-right: 40px;
+    font-size: 15px;
+    font-family: Verdana;
+    text-decoration: underline;
+}
+
+li:last-child{
+    border-right: 0px solid black;
+}
+p{
+    font-style: normal;
+    font-size: 15px;
+}
+
+h1{
+    font-style: normal;
+    font-size: 30px;
+    color: indianred;
+}
+
+h2{
+    font-style: normal;
+    font-size: 20px;
+    color: indianred;
+}
+
+h3{
+    font-style: normal;
+    font-size: 15px;
+    color: indianred;
+}
+
+a:link{
+    text-decoration: none;
+}
+
+a:visited{
+    text-decoration: none;
+}
+
+a:hover{
+    font-weight: bold;
+}
+
+.active{
+    text-decoration: underline;
+    background-color:  salmon;
+}
+
+.autorepost{
+    font-weight: bold;
+    color: black;
+    text-align: left;
+    padding-left: 50px;
+}
+
+div .post{
+    width: 60%;
+    min-height: 100px;
+    line-height: 35px;
+    height: auto;
+    background-color: salmon;
+    margin: auto;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+/*scritte "Persone" e "Gruppi*/
+p.spaPersone,p.spaGruppi{
+    font-weight: bold;
+    padding-left: 10px;
+}
+
+/* è tutto il nav che comprende anche nav li descritto qui sotto*/
+nav{
+    width: 100%;
+    height: 100px;
+    background-color: black;
+    color: white;
+}
+
+/* div che contiene le scritte Bacheca e Profilo */
+.bachecaProfiloScritte{
+    width: 60%;
+    height: 100px;
+    float: left;
+    text-align: center;
+    list-style-type: none;
+}
+
+#BachecaPersonale{
+    width: 50%;
+    float: left;
+    font-size: 25px;
+    height: 100px;
+    line-height: 100px;
+}
+
+#BachecaPersonale a, #ProfiloPersonale a, .logout a{
+    color: white;
+}
+
+#ProfiloPersonale{
+    width: 50%;
+    float: left;
+    font-size: 25px;
+    height: 100px;
+    line-height: 100px;
+}
+
+/* div che contiene parte centrale dell'inserimento dati del profilo, contiene anche label.pro */
+div.strutturaProfilo{  
+    float: left;
+    height: auto;
+    min-height: 500px;
+    width: 80%;
+    text-align: center;
+    padding-top: 50px;
+}
+/*bacheca, parte centrale, inserimento post*/
+div.Sezionepost{  
+    float: left;
+    width: 80%;
+    min-height: 400px;
+    height: auto;
+    text-align: center;
+    padding-top: 10px;
+}
+
+#immagini{
+    width: 400px;
+    height: 400px;
+}
+/*menù sulla sinistra, elenco gruppi e persone*/
+aside{ 
+    float: left;
+    width: 20%;
+    min-width: 250px;
+    min-height: 500px;
+    height: 100%;
+    text-align: left;  
+    background-color:  #e4e4e4;
+    padding: 10px 0px 0px 10px;
+}
+/*scritte persone e guppi e elenco amici e elenco gruppi di bacheca e profilo*/
+#Persone, #gruppi{
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+}
+/*bacheca, profilo aside*/
+#elencoamici, #elencogruppi{
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+}
+
+/*elenco partecipanti dei gruppi su bacheca e profilo aside*/
+.partecipanteGruppo{
+    width: 100%;
+    padding-left: 20px;
+}
+/* contiene le caratteristiche della pagina profilo: nome, cognome, nato, ecc*/
+.pro{ 
+    float: left;
+    text-align: center;
+    width: 100%;
+    height: auto;
+    line-height: 30px;
+    margin-bottom: 20px;
+}
+
+.pro label{
+    float: left;
+    width: 20%;
+    height: 30px;
+    line-height: 30px;
+    margin-left: 30%;
+    font-weight: bold;
+    text-align: left;
+}
+
+.pro input{
+    float: left;
+    width: 20%;
+    height: 30px;
+    line-height: 30px;
+    text-indent: 1.5em;
+}
+
+.pro textarea{
+    float: left;
+    border-radius: 5px;
+    height: 50px;
+    resize: none;
+    width: 20%;
+}
+
+.bottoneprofilo{
+    width: 40%;
+    height: 50px;
+    margin-left: 30%;
+    float: left;
+}
+
+/* header, comprende il nome del sito */
+header{
+    text-align: center;
+    width: 100%;
+    height: 75px;
+    line-height: 75px;
+    background-color: #e4e4e4;
+}
+/* container che va dal body sino alla push*/
+#container{
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -100px; 
+} 
+
+#content{
+    float: left;
+    width: 100%;
+    min-height: 500px;
+    height: auto;
+    background-color: bisque;
+}
+/* footer, diviso in 3, stesse caratteristiche */
+footer{
+    height: 103px; 
+    clear: both;
+    background-color: #e4e4e4;
+    border-top: 3px solid black;
+}
+footer .foot{
+    display: block;
+    float: left;
+    width: 33.3%;
+    text-align: center;
+    height: 100px;
+    line-height: 50px;
+}
+/* form login centrale */
+.strutturaLogin{
+    background-color: #e4e4e4;
+    width: 400px;
+    height: 300px;
+    margin: 50px auto;
+}
+
+.in{
+    text-align: left;
+    height: 60px;
+    line-height: 60px;
+    width: 100%;
+}
+
+.in input{
+    height: 30px;
+    width: 70%;
+    margin: 20px 15% 0 15%;    
+}
+/*scritta member login nella pagina login*/
+#memberLogin{
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    width: 100%;
+    height: 55px;
+    line-height: 55px;
+}
+/* posiziono la scritta degli errori al centro*/
+#errors{
+    text-align: center;
+    margin-top: 40px;
+    font-weight: bold;
+}
+
+/* bottone login presente nella pagina login*/
+#bottoni{
+    width: 100%;
+    height: 30px;
+    float: left;
+    text-align: center;
+    padding: 0 15% 0 15%;
+}
+#bottoni input{
+    font-size: 15px;
+    width: 120px;
+    height: 30px;
+    float: left;
+    border: 2px solid black;
+}
+
+#bottonelogin{
+    margin-right: 40px;
+}
+/* scritte username e password nel form di login */
+.UsernamePasswordLogin{
+    font-weight: bold;
+    width: 100%;
+    height: 150px;
+
+    text-align: center;
+}
+
+/* spazio in alto a destra e comprende sia utenteLoggato che il pulsante logout */
+#spazioLogin{
+    width: 20%;
+    height: 100px;
+    float: left;
+    text-align: center;
+    padding-left: 10%;
+}
+/* visualizza il nome dell'utente */
+.utenteLoggato{
+    font-weight: bold;
+    float: left;
+    height: 25px;
+    width: 100%;
+    font-size: 15px;
+    line-height: 25px;
+}
+
+.logout{
+    float: left;
+    height: 25px;
+    width: 100%; 
+    line-height: 25px;
+}
+
+/* spazio vuoto nella barra del nav di bacheca e profilo, prima parte in alto a sinistra */
+#spazioVuoto{
+    width: 20%;
+    float: left;
+    height: 100px;
+}
+
+/* riguarda la barra search */
+input.search{
+    text-align: justify;
+    font-size: 15px;
+    border: 2px solid #e4e4e4;
+    border-radius: 4px;
+    background-color: white;
+    background-image: url('\immagini/search.png');
+    background-position: 2px 2px; 
+    background-repeat: no-repeat;
+    width: 130px;
+    height: 30px;
+    padding-left: 30px;
+    margin-bottom: 10px;
+    /*transazione avviene sia in larghezza che in lunghezza, durata 1s*/
+    transition-property: height, width; 
+    transition-duration: 1s;
+}
+/* quando il campo search diventa attivo cambio la larghezza */
+input.search:focus {
+    width: 240px;  
+}
+
+.nuovopost{
+    width: 60%;
+    min-height: 150px;
+    line-height: 30px;
+    height: auto;
+    background-color: pink;
+    padding-top: 20px;
+    margin: auto;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+#scrittapubblicapost{
+    background-color: white;
+    margin-bottom: 30px;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 20px;
+    width: 200px;
+    border-radius: 5px;  
+}
+
+#pubblicapost{
+    width: 200px;
+    height: 40px;
+    margin-bottom: 20px;
+}
