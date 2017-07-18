@@ -111,10 +111,34 @@ a:hover{
 }
 
 .autorepost{
+    width: 50%;
+    height: 25px;
+    line-height: 25px;
     font-weight: bold;
     color: black;
     text-align: left;
     padding-left: 50px;
+    float: left;
+}
+
+.formcancellapost{   
+    width: 50%;
+    height: 25px;
+    float: left;
+    text-align: right;
+    line-height: 25px;
+    
+}
+
+#cancellapost{
+    background-color: black;
+    color: white;
+    width: 30px;
+    height: 25px;
+    line-height: 25px;
+    font-weight: bold;
+    border-radius: 5px;
+    margin: 0;
 }
 
 div .post{
@@ -122,11 +146,12 @@ div .post{
     min-height: 100px;
     line-height: 35px;
     height: auto;
-    background-color: salmon;
+    background-color: white;
     margin: auto;
     margin-bottom: 20px;
     margin-top: 20px;
     border-radius: 5px;
+    border: 1px solid grey;
 }
 /*scritte "Persone" e "Gruppi*/
 p.spaPersone,p.spaGruppi{
@@ -202,7 +227,7 @@ aside{
     min-height: 500px;
     height: 100%;
     text-align: left;  
-    background-color:  #e4e4e4;
+    background-color: #e4e4e4;
     padding: 10px 0px 0px 10px;
 }
 /*scritte persone e guppi e elenco amici e elenco gruppi di bacheca e profilo*/
@@ -253,7 +278,6 @@ aside{
 
 .pro textarea{
     float: left;
-    border-radius: 5px;
     height: 50px;
     resize: none;
     width: 20%;
@@ -428,22 +452,23 @@ input.search:focus {
     min-height: 150px;
     line-height: 30px;
     height: auto;
-    background-color: pink;
-    padding-top: 20px;
+    background-color: #e4e4e4;
     margin: auto;
     margin-bottom: 20px;
     margin-top: 20px;
     border-radius: 5px;
+    border: 1px solid grey;
 }
 
 #scrittapubblicapost{
-    background-color: white;
-    margin-bottom: 30px;
+    background-color: black;
+    color: white;
     margin-right: auto;
     margin-left: auto;
     font-size: 20px;
-    width: 200px;
-    border-radius: 5px;  
+    width: 100%;
+    float: left;
+    border-radius: 5px 5px 0px 0px;  
 }
 
 #pubblicapost{
@@ -451,3 +476,13 @@ input.search:focus {
     height: 40px;
     margin-bottom: 20px;
 }
+
+#textPost{
+    width: 100%;
+    float: left;
+    height: 100px;
+    border-bottom: 1px solid grey;
+    resize: none;
+}
+
+

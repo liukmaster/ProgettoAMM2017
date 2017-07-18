@@ -30,7 +30,7 @@ public class Login extends HttpServlet {
     public void init() {
         
         //percorso del database
-        String dbConnection = "jdbc:derby:" +  //this.getServletContext().getRealPath("/") + DB_BUILD_PATH;
+        String dbConnection = "jdbc:derby:" + //this.getServletContext().getRealPath("/") + DB_BUILD_PATH;
         "//localhost:1527/ammdb";
         try {
             // si carica a run-time la classe del Driver tramite il nome del driver stesso

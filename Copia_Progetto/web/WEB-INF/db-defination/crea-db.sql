@@ -47,7 +47,7 @@ INSERT INTO utente(utente_id, nome, cognome, dataDiNascita, email, password, url
 VALUES (default,
 	'luca',
         'fadda',
-        null,
+         null,
         'luca@hotmail.it',
 	'123',
 	'img/luca.jpg',

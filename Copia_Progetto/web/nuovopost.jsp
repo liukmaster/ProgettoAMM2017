@@ -6,13 +6,12 @@
 <div class="nuovopost">
     <form action="Bacheca" method="post">
         <div>
-            <div id="scrittapubblicapost">Pubblica Post</div>
-            <div class="pro">              
-                <label for="textPost">Contenuto</label>
-                <textarea name="postditesto" id="textPost"></textarea>
+            <label id="scrittapubblicapost">Pubblica Post</label>
+            <div class="pronuovopost">
+                <textarea name="postditesto" id="textPost" placeholder="Contenuto..."></textarea>
             </div>
-            <div class="pro">
-                <label for="imgPost">File d'immagine</label>
+            <div class="pronuovopost">
+                <label id="imgfile">File d'immagine</label>
                 <input name="postimmagine" type="url" id="imgPost">
             </div>
         </div>

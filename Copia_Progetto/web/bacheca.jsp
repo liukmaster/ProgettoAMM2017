@@ -25,10 +25,12 @@
                         <div class="post">
                             <p class="autorepost">${post.getUtente().nome} ${post.getUtente().cognome}</p>
                             <form action="Bacheca" method="post">
-                                <c:if test="${UtenteLoggato.getNomeCognome() == post.getUtente().getNomeCognome()}">
-                                    <!-- ogni bottone cancellapost si riferisce a un post e prenderà come valore l'id di quel post -->
-                                    <button type="submit" id="cancellapost" name="cancellapost" value="${post.getId()}">cancella</button>
-                                </c:if>
+                                <!-- ogni bottone cancellapost si riferisce a un post e prenderà come valore l'id di quel post -->
+                                <div class="formcancellapost">
+                                    <c:if test="${UtenteLoggato.getNomeCognome() == post.getUtente().getNomeCognome()}">
+                                        <button type="submit" id="cancellapost" name="cancellapost" value="${post.getId()}">x</button>
+                                    </c:if>
+                                </div>
                             </form>
                             <p>${post.contenutoPost}</p>
                             <c:if test="${post.tipoDiPost == 'URL'}">
